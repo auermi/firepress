@@ -1,4 +1,5 @@
 #fp_table {
+  margin-top: 48px;
 	border-collapse: collapse;
 }
 #fp_table td, #fp_table th {
@@ -9,4 +10,8 @@
 
 #fp_table th {
 	font-weight: bold;
+}
+
+#FPURLInput {
+  width: 420px;
 }

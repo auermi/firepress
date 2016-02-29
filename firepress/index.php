@@ -18,6 +18,7 @@ function fp_init() {
 function fp_renderPlugin() {
   echo "<h1>Firepress</h1>";
   echo "<p>A plugin for viewing your Firebase plugins in Wordpress</p>";
+  echo "<label>Firebase URL</label><br><input id=\"FPURLInput\"><button id=\"FPURLSubmit\">Generate</button>";
   echo "<table id=\"fp_table\"></table>";
 }
 
