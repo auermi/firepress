@@ -9,17 +9,23 @@ Author URI: http://michaelauer.io
 Plugin URI: https://github.com/auermi/firepress
 */
 
-add_action('admin_menu', 'init');
-
-function init() {
+function fp_init() {
   $app_name = "Firepress";
   $app_id = "firepress";
-  add_menu_page($app_name, $app_name, 'administrator', $app_id . 'top-level', 'renderPlugin');
+  add_menu_page($app_name, $app_name, 'administrator', $app_id . 'top-level', 'fp_renderPlugin');
 }
 
-function renderPlugin() {
+function fp_renderPlugin() {
   echo "<h1>Firepress</h1>";
   echo "<p>A plugin for viewing your Firebase plugins in Wordpress</p>";
 }
+
+function fp_register_scripts() {
+  wp_enqueue_script('fp_firebase_js', 'https://cdn.firebase.com/js/client/2.4.1/firebase.js');
+  wp_enqueue_script('fp_app_js', plugins_url('/js/app.js', __FILE__));
+}
+
+add_action('admin_menu', 'fp_register_scripts');
+add_action('admin_menu', 'fp_init');
 
 ?>
