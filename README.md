@@ -1,4 +1,4 @@
-# firebase-wordpress
+# firepress
 A Wordpress plugin for viewing Firebase data sets.
 
 ## Usage
